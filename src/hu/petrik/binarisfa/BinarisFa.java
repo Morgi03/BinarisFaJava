@@ -17,7 +17,10 @@ public class BinarisFa<T extends Comparable<T>> {
 
     @Override
     public String toString() {
-        return "BiFaElem{}";
+        if (this.fej == null){
+            return "";
+        }
+        return this.fej.toString();
     }
 
     private class BiFaElem<T extends Comparable<T>> {
