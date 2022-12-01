@@ -11,7 +11,7 @@ public class BinarisFa<T extends Comparable<T>> {
         if (this.fej == null) {
             this.fej = new BiFaElem<>(ertek);
         } else {
-            fej.beszur(ertek)
+            fej.beszur(ertek);
         }
     }
 
@@ -52,9 +52,17 @@ public class BinarisFa<T extends Comparable<T>> {
 
         public void beszur(T ertek) {
             if (ertek.compareTo(this.ertek) < 0) {
-                //TODO: beszúrás balra
+                if (this.bal == null) {
+                    this.bal = new BiFaElem<>(ertek);
+                } else {
+                    this.bal.beszur(ertek);
+                }
             } else {
-                //TODO: beszúrás jobbra
+                if (this.jobb == null) {
+                    this.jobb = new BiFaElem<>(ertek);
+                } else {
+                    this.jobb.beszur(ertek);
+                }
             }
         }
     }
