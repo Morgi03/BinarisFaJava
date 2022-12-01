@@ -15,6 +15,11 @@ public class BinarisFa<T extends Comparable<T>> {
         }
     }
 
+    @Override
+    public String toString() {
+        return "BiFaElem{}";
+    }
+
     private class BiFaElem<T extends Comparable<T>> {
         private T ertek;
         private BiFaElem<T> bal;
@@ -64,6 +69,21 @@ public class BinarisFa<T extends Comparable<T>> {
                     this.jobb.beszur(ertek);
                 }
             }
+
+
+        }
+
+        @Override
+        public String toString() {
+            String s = "";
+            if (this.bal != null) {
+                s += this.bal + ", ";
+            }
+            s += ertek;
+            if (this.jobb != null) {
+                s += ", " + this.jobb;
+            }
+            return s;
         }
     }
 }
